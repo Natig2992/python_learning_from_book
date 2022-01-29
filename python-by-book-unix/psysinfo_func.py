@@ -15,10 +15,20 @@ def disk_func():
     print ("Gathering diskspace information with %s command:\n" % diskspace)
     subprocess.call([diskspace, diskspace_arg])
 
+def meminfo_func():
+    mem = "free"
+    mem_arg = "-m"
+    print()
+    print("Gathering inoformation about memory with %s command:\n" % mem)
+    subprocess.call([mem, mem_arg])
+
+
 # Main function, calling other two functions:
 
 def main():
     uname_func()
     disk_func()
+    meminfo_func()
+
 if __name__== "__main__":
     main()
